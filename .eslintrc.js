@@ -6,7 +6,7 @@ module.exports = {
     },
     extends: [
       'airbnb-base',
-      'plugin:jest/all',
+      'plugin:jest/recommended',
     ],
     globals: {
       Atomics: 'readonly',
@@ -28,6 +28,11 @@ module.exports = {
         'WithStatement',
       ],
     },
+    settings: {
+  	"jest": {
+        "version": 27 // Specify the Jest version you are using
+        }
+   },
     overrides:[
       {
         files: ['*.js'],
