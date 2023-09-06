@@ -25,10 +25,9 @@ class RedisClient {
     return val;
   }
 
-  async set(key) {
+  async set(key, val, dur) {
     const asyncSet = promisify(this.client.get).bind(this.client);
-    const val = await asyncSet(key);
-    return val;
+    const val = await asyncSet(key, val, 'EX', dur);
   }
 
   async del(key) {
@@ -39,4 +38,4 @@ class RedisClient {
 
 const redisClient = new RedisClient();
 
-module.exports(redisClient);
+module.exports = redisClient;
