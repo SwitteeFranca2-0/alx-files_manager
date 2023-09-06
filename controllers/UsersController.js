@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
 const dbClient = require('../utils/db');
-import sha1 from 'sha1';
 
 class UsersController {
   static async postNew(req, res) {
